@@ -1,0 +1,24 @@
+{
+  "name": "lenslink-turn",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LensLink 中继凭证服务：Cloudflare Realtime TURN 现签短期 ICE 凭证，供 LensLink 双端换取中继入口",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "TURN_KEY_ID": {
+        "description": "Cloudflare 控制台 Realtime → TURN 里你那个 TURN 应用的「Turn 令牌 ID」"
+      },
+      "TURN_KEY_TOKEN": {
+        "description": "该 TURN Key 的 API 令牌，只在创建时显示一次；丢了只能重新创建"
+      }
+    }
+  }
+}

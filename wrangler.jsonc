@@ -1,0 +1,17 @@
+// LensLink 中继凭证服务 —— Cloudflare Workers 部署配置。
+// 「Deploy to Cloudflare」按钮会读取本文件自动创建并部署 Worker；
+// 两个 secret（TURN_KEY_ID / TURN_KEY_TOKEN）来自 .dev.vars.example，
+// 部署页面上会提示你逐个填写。
+{
+  "name": "lenslink-turn",
+  "main": "src/worker.js",
+  // 用当前日期即可，不需要改
+  "compatibility_date": "2026-01-01",
+  "observability": {
+    "enabled": true
+  },
+  // 可选：凭证有效期（秒）。默认 3600 = 1 小时，跟 App 端演示一致
+  "vars": {
+    "TURN_TTL": "3600"
+  }
+}
